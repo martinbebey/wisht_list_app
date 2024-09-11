@@ -1,4 +1,5 @@
 *.iml
+.gradle
 /local.properties
 /.idea/caches
 /.idea/libraries
@@ -16,7 +17,7 @@ local.properties
 #build files
 /.idea
 gradle.properties
+gradle/
 gradlew
 gradlew.bat
 settings.gradle.kts
-build.gradle.kts
