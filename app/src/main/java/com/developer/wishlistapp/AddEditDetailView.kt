@@ -18,6 +18,7 @@ import androidx.compose.material3.OutlinedTextField
 
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -48,6 +49,16 @@ fun AddEditDetailView(
 
     val scope = rememberCoroutineScope()
     val scaffoldState = rememberScaffoldState() //keep scaffold up to date
+
+    if (id != 0L){
+        val wish = viewModel.getAWishById(id).collectAsState(initial = Wish(0L, "", ""))
+        viewModel.wishTitle = wish.value.title
+        viewModel.wishDescriptionState = wish.value.description
+    }
+    else{
+        viewModel.wishTitle = ""
+        viewModel.wishDescriptionState = ""
+    }
 
     Scaffold(
         topBar = {
