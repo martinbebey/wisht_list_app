@@ -54,6 +54,16 @@ fun AddEditDetailView(
             Spacer(modifier = Modifier.height(10.dp))
 
             WishTextField(
+                label = "Title",
+                value = viewModel.wishTitle,
+                onValueChanged = {str ->
+                    viewModel.onWishTitleChanged(str)
+                }
+            )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            WishTextField(
                 label = "Description",
                 value = viewModel.wishDescriptionState,
                 onValueChanged = {str ->
@@ -93,14 +103,14 @@ fun WishTextField(
         value = value, 
         onValueChange = onValueChanged,
         label = {Text(text = label, color = Color.Black)},
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth().padding(start = 10.dp, end = 10.dp),
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
         colors = TextFieldDefaults.outlinedTextFieldColors(
             focusedBorderColor = colorResource(id = R.color.purple_700),
             unfocusedBorderColor = colorResource(id = R.color.black),
             cursorColor = colorResource(id = R.color.teal_700),
-            focusedLabelColor = colorResource(id = R.color.purple_200),
-            unfocusedLabelColor = colorResource(id = R.color.black),
+            focusedLabelColor = Color.Green,
+            unfocusedLabelColor = Color.Green,
             focusedTextColor = Color.Blue,
             unfocusedTextColor = colorResource(id = R.color.black)
         )

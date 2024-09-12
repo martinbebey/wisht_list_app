@@ -38,8 +38,8 @@ fun HomeView(
         floatingActionButton = {
             FloatingActionButton(
                 modifier = Modifier.padding(all = 20.dp),
-                contentColor = Color.White,
-                backgroundColor = Color.Black,
+                contentColor = Color.Black,
+                backgroundColor = Color.Magenta,
                 onClick = {
                     Toast.makeText(context, "FAB button clicked", Toast.LENGTH_LONG).show()
                     navController.navigate(Screen.AddScreen.route)
