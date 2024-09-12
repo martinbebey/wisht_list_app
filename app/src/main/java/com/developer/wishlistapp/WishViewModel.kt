@@ -17,6 +17,12 @@ class WishViewModel (
     var wishTitle by mutableStateOf("")
     var wishDescriptionState by mutableStateOf("")
 
+    init{
+        viewModelScope.launch(Dispatchers.IO) {
+            getAllWishes = wishRepository.getWishes()
+        }
+    }
+
     fun onWishTitleChanged(newString: String){
         wishTitle = newString
     }
@@ -26,12 +32,6 @@ class WishViewModel (
     }
 
     lateinit var getAllWishes: Flow<List<Wish>>
-
-    init{
-        viewModelScope.launch(Dispatchers.IO) {
-            getAllWishes = wishRepository.getWishes()
-        }
-    }
 
     fun addAWish(wish: Wish){
         viewModelScope.launch {
