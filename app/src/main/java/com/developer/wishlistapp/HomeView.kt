@@ -91,13 +91,13 @@ fun HomeView(
                                      if(dismissState.dismissDirection == DismissDirection.EndToStart) Color.Red else Color.Transparent,
                                      label = ""
                                  )
-                        val alignment = Alignment.CenterEnd
 
                         Box(
                             modifier = Modifier
                                 .fillMaxSize()
                                 .background(color)
-                                .padding(horizontal = 20.dp)
+                                .padding(horizontal = 20.dp),
+                            contentAlignment = Alignment.CenterEnd
                         ){
                             Icon(
                                 imageVector = Icons.Default.Delete,
