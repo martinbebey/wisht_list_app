@@ -102,7 +102,7 @@ fun AddEditDetailView(
 
             Button(onClick = {
                 if(viewModel.wishDescriptionState.isNotEmpty() && viewModel.wishTitle.isNotEmpty()){
-                    //TODO update Wish
+                    //Update Wish
                     if(id != 0L){
                         viewModel.updateAWish(
                            Wish(
@@ -112,7 +112,7 @@ fun AddEditDetailView(
                            )
                         )
                     }
-                    //TODO Add Wish
+                    //Add Wish
                     else{
                         viewModel.addAWish(
                             Wish(
